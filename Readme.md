@@ -1,1 +1,1 @@
-16/10/22 - Inital commit
+Graphql URL: http://localhost:8080/graphql
