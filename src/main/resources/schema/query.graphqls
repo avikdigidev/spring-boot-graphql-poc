@@ -2,4 +2,10 @@ type Query {
 	firstQuery : String
 	secondQuery : String
 	fullName (firstName: String, lastName : String ) : String
+	fullNameRequest(nameRequest : NameRequest) : String
+}
+
+input NameRequest{
+	firstName: String
+	lastName: String
 }
