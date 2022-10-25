@@ -1,0 +1,9 @@
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('1', '80', 'Java', '1');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('3', '80', 'Java', '2');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('2', '70', 'MySQL', '1');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('4', '70', 'MySQL', '2');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('5', '70', 'MongoDB', '2');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('6', '70', 'Cassandra', '3');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('7', '70', 'MongoDB', '3');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('8', '70', 'Git', '4');
+INSERT INTO `springboot_graphql`.`subject` (`id`, `marks_obtained`, `subject_name`, `student_id`) VALUES ('9', '70', 'MongoDb', '4');
