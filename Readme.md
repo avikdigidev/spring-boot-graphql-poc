@@ -3,6 +3,24 @@ Updated custom URL: http://localhost:8080/student-service/app-ui
 
 Queries:
 
+
+query {
+getStudent(id: 3) {
+id
+firstName
+lastName
+email
+city
+learningSubjects(subjectNameFilter: All) {
+id
+subjectName
+marksObtained
+}
+
+}
+}
+
+
 query {
 getStudent(id: 2) {
 id
