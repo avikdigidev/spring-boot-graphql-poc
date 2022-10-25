@@ -26,8 +26,11 @@ public class StudentResponse {
 	private String city;
 	
 	private List<SubjectResponse> learningSubjects;
-	
+	//this is for internal use. DO NOT PUT IN SCHEMA
+	private Student student;
+
 	public StudentResponse (Student student) {
+		this.student= student;
 		this.id = student.getId();
 		this.firstName = student.getFirstName();
 		this.lastName = student.getLastName();
@@ -35,13 +38,16 @@ public class StudentResponse {
 		
 		this.street = student.getAddress().getStreet();
 		this.city = student.getAddress().getCity();
-		
-		if (student.getLearningSubjects() != null) {
+
+
+		/*Below line works for REST API but its not good for GraphQL queries
+		* as it is not always required to get the subject details*/
+/*		if (student.getLearningSubjects() != null) {
 			learningSubjects = new ArrayList<SubjectResponse>();
 			for (Subject subject: student.getLearningSubjects()) {
 				learningSubjects.add(new SubjectResponse(subject));
 			}
-		}
+		}*/
 	}
 
 }
