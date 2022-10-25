@@ -1,11 +1,26 @@
 type Query {
-	firstQuery : String
-	secondQuery : String
-	fullName (firstName: String, lastName : String ) : String
-	fullNameRequest(nameRequest : NameRequest) : String
+    firstQuery : String
+    secondQuery : String
+    fullName (firstName: String, lastName : String ) : String
+    fullNameRequest(nameRequest : NameRequest) : String
+    getStudent(id: Long): StudentResponse
+}
+
+type StudentResponse {
+    id: Long
+
+    firstName: String
+
+    lastName : String
+
+    email : String
+
+    street: String
+
+    city: String
 }
 
 input NameRequest{
-	firstName: String!
-	lastName: String
+    firstName: String!
+    lastName: String
 }
