@@ -19,15 +19,9 @@ type StudentResponse {
 
     city: String
 
-    learningSubjects(subjectNameFilter: SubjectNameFilter): [SubjectResponse]
+    learningSubjects(subjects : [String]): [SubjectResponse]
 }
 
-enum SubjectNameFilter {
-    All,
-    Java,
-    MySQL,
-    MongoDB
-}
 
 type SubjectResponse {
      id: Long

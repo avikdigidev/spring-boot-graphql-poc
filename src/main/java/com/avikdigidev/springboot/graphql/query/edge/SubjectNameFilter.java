@@ -1,8 +1,10 @@
 package com.avikdigidev.springboot.graphql.query.edge;
 
-public enum SubjectNameFilter {
-    All,
-    Java,
-    MySQL,
-    MongoDB
+import lombok.*;
+
+import java.util.*;
+@Getter
+@Setter
+public class SubjectNameFilter {
+List<String> subjects;
 }

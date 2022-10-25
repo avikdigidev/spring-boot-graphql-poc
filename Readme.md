@@ -3,6 +3,21 @@ Updated custom URL: http://localhost:8080/student-service/app-ui
 
 Queries:
 
+query {
+getStudent(id: 1) {
+id
+firstName
+lastName
+email
+city
+learningSubjects(subjects: ["Java", "MySQL"]) {
+id
+subjectName
+marksObtained
+}
+}
+}
+
 
 query {
 getStudent(id: 3) {

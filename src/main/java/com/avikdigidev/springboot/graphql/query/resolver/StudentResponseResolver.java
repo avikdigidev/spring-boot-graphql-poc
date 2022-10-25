@@ -7,20 +7,19 @@ import com.coxautodev.graphql.tools.*;
 import org.springframework.stereotype.*;
 
 import java.util.*;
+import java.util.stream.*;
 
 @Service
 public class StudentResponseResolver implements GraphQLResolver<StudentResponse> {
 
-    public List<SubjectResponse> getLearningSubjects(StudentResponse studentResponse, SubjectNameFilter subjectNameFilter) {
+    public List<SubjectResponse> getLearningSubjects(StudentResponse studentResponse, List<String> subjectNameFilter) {
         List<SubjectResponse> learningSubjects = new ArrayList<>();
 
         if (studentResponse.getStudent().getLearningSubjects() != null) {
 
             for (Subject subject : studentResponse.getStudent().getLearningSubjects()) {
-                if(subjectNameFilter.name().equalsIgnoreCase("All")){
-                    learningSubjects.add(new SubjectResponse(subject));
-                }
-                else if(subjectNameFilter.name().equalsIgnoreCase(subject.getSubjectName())){
+                List<String> collect = subjectNameFilter.stream().filter(s -> s.equalsIgnoreCase(subject.getSubjectName())).collect(Collectors.toList());
+                if(collect.contains(subject.getSubjectName())){
                     learningSubjects.add(new SubjectResponse(subject));
                 }
 
