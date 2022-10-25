@@ -9,6 +9,23 @@ id
 firstName
 lastName
 email
+city
+learningSubjects(subjectNameFilter: Java) {
+id
+subjectName
+marksObtained
+}
+
+}
+}
+
+
+query {
+getStudent(id: 2) {
+id
+firstName
+lastName
+email
 learningSubjects {
 id
 subjectName

@@ -19,7 +19,13 @@ type StudentResponse {
 
     city: String
 
-    learningSubjects: [SubjectResponse]
+    learningSubjects(subjectNameFilter: SubjectNameFilter): [SubjectResponse]
+}
+
+enum SubjectNameFilter {
+    Java,
+    MySQL,
+    MongoDB
 }
 
 type SubjectResponse {
