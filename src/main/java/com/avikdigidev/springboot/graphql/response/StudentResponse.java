@@ -1,11 +1,9 @@
 package com.avikdigidev.springboot.graphql.response;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 import com.avikdigidev.springboot.graphql.entity.Student;
-import com.avikdigidev.springboot.graphql.entity.Subject;
 import lombok.Getter;
 import lombok.Setter;
 
