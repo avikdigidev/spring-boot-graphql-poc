@@ -3,7 +3,7 @@ package com.avikdigidev.springboot.graphql.query;
 import com.avikdigidev.springboot.graphql.request.NameRequest;
 import com.avikdigidev.springboot.graphql.response.StudentResponse;
 import com.avikdigidev.springboot.graphql.service.StudentService;
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import graphql.kickstart.tools.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

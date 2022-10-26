@@ -2,7 +2,7 @@ package com.avikdigidev.springboot.graphql.query.resolver;
 
 import com.avikdigidev.springboot.graphql.entity.*;
 import com.avikdigidev.springboot.graphql.response.*;
-import com.coxautodev.graphql.tools.*;
+import graphql.kickstart.tools.*;
 import org.springframework.stereotype.*;
 
 import java.util.*;

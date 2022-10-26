@@ -3,7 +3,8 @@ package com.avikdigidev.springboot.graphql.mutation;
 import com.avikdigidev.springboot.graphql.request.*;
 import com.avikdigidev.springboot.graphql.response.*;
 import com.avikdigidev.springboot.graphql.service.*;
-import com.coxautodev.graphql.tools.*;
+
+import graphql.kickstart.tools.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
