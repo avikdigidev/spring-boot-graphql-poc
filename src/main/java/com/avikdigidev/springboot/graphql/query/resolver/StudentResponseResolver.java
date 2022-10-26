@@ -1,7 +1,6 @@
 package com.avikdigidev.springboot.graphql.query.resolver;
 
 import com.avikdigidev.springboot.graphql.entity.*;
-import com.avikdigidev.springboot.graphql.query.edge.*;
 import com.avikdigidev.springboot.graphql.response.*;
 import com.coxautodev.graphql.tools.*;
 import org.springframework.stereotype.*;
@@ -18,9 +17,13 @@ public class StudentResponseResolver implements GraphQLResolver<StudentResponse>
         if (studentResponse.getStudent().getLearningSubjects() != null) {
 
             for (Subject subject : studentResponse.getStudent().getLearningSubjects()) {
-                List<String> collect = subjectNameFilter.stream().filter(s -> s.equalsIgnoreCase(subject.getSubjectName())).collect(Collectors.toList());
-                if(collect.contains(subject.getSubjectName())){
+                if (subjectNameFilter ==null){
                     learningSubjects.add(new SubjectResponse(subject));
+                }else {
+                    List<String> collect = subjectNameFilter.stream().filter(s -> s.equalsIgnoreCase(subject.getSubjectName())).collect(Collectors.toList());
+                    if (collect.contains(subject.getSubjectName())) {
+                        learningSubjects.add(new SubjectResponse(subject));
+                    }
                 }
 
             }
