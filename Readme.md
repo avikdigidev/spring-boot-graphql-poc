@@ -3,6 +3,35 @@ Updated custom URL: http://localhost:8080/student-service/app-ui
 
 Queries:
 
+mutation {
+createStudent(
+createStudentRequest: {
+firstName: "Akash"
+lastName: "Shelke"
+email: "asf@gmail.com"
+street: "14"
+city: "Bhilai"
+subjectsLearning: [
+{ subjectName: "Java", marksObtained: 100 }
+{ subjectName: "Spring", marksObtained: 100 }
+]
+}
+) {
+id
+firstName
+lastName
+email
+street
+city
+learningSubjects {
+id
+subjectName
+marksObtained
+}
+}
+}
+
+
 query {
 getStudent(id: 1) {
 id
