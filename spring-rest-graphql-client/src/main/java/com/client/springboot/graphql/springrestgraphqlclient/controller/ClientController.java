@@ -1,13 +1,10 @@
 package com.client.springboot.graphql.springrestgraphqlclient.controller;
 
+import com.client.springboot.graphql.springrestgraphqlclient.request.*;
 import com.client.springboot.graphql.springrestgraphqlclient.response.*;
 import com.client.springboot.graphql.springrestgraphqlclient.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -20,6 +17,13 @@ public class ClientController {
 	@GetMapping("/get/{id}")
 	public StudentResponse getStudent(@PathVariable Integer id) {
 		return clientService.getStudent(id);
+	}
+
+
+	@PostMapping("/create")
+	public StudentResponse createStudent(
+			@RequestBody CreateStudentRequest createStudentRequest) {
+		return clientService.createStudent(createStudentRequest);
 	}
 	
 }
