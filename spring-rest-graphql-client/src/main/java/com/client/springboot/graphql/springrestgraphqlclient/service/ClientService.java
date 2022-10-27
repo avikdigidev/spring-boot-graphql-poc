@@ -10,6 +10,8 @@ import graphql.kickstart.spring.webclient.boot.GraphQLRequest;
 import graphql.kickstart.spring.webclient.boot.GraphQLResponse;
 import graphql.kickstart.spring.webclient.boot.GraphQLWebClient;
 
+import java.util.*;
+
 @Service
 public class ClientService {
 	
@@ -17,8 +19,11 @@ public class ClientService {
 	GraphQLWebClient graphQLWebClient;
 
 	public StudentResponse getStudent (Integer id) {
-		String queryStr = "query {\r\n"
-				+ "  getStudent(id : "+ id +") {\r\n"
+		Map<String, Object> variables = new HashMap<>();
+		variables.put("id", id);
+
+		String queryStr = "query getStudent($id : Int){\r\n"
+				+ "  getStudent(id : $id) {\r\n"
 				+ "    id\r\n"
 				+ "    firstName\r\n"
 				+ "    lastName\r\n"
@@ -34,7 +39,7 @@ public class ClientService {
 				+ "}";
 		
 		GraphQLRequest request = GraphQLRequest.builder()
-				.query(queryStr).build();
+				.query(queryStr).variables(variables).build();
 		
 		GraphQLResponse graphQLResponse = graphQLWebClient.post(request).block();
 		
