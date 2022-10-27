@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/student/get/1",
+							"raw": "http://localhost:9090/api/student/get/13",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -25,7 +25,37 @@
 								"api",
 								"student",
 								"get",
-								"1"
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n      \"firstName\": \"Prakash\",\r\n      \"lastName\": \"Shelke\",\r\n      \"email\": \"asf@gmail.com\",\r\n      \"street\": \"15\",\r\n      \"city\": \"Bhilai\",\r\n      \"subjectsLearning\": [\r\n        { \"subjectName\": \"Java 8\",\r\n        \"marksObtained\": 100\r\n        },\r\n        { \"subjectName\": \"Spring boot\",\r\n        \"marksObtained\": 100 \r\n        }\r\n      ]\r\n    }\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/student/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"student",
+								"create"
 							]
 						}
 					},
